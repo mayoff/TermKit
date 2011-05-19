@@ -10,7 +10,7 @@ $(document).ready(function () {
   client.onConnect = function () {
     var shell = new termkit.client.shell(client, {}, function (shell) {
       var view = new termkit.commandView(shell);
-      $('#terminal').append(view.$element);
+      $('terminal').append(view.$element);
       view.newCommand();
     });    
   };

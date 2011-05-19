@@ -3,12 +3,12 @@ body {
 }
 
 
-.termkitCommandView {
+commandView {
   font-family: "BitStream Vera Sans", "Lucida Grande";
   font-size: 70%;
 }
 
-.termkitCommandView pre {
+commandView pre {
   font-family: "BitStream Vera Sans Mono", "Lucida Console";
   font-size: inherit;
   font-size: 87.5%;

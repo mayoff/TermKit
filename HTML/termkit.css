@@ -121,11 +121,11 @@ body {
 
 /************/
 
-.termkitCommandView {
+commandView {
   padding-bottom: 34px;
 }
 
-.termkitCommandView .context {
+commandView > context {
   position: fixed;
   left: 0;
   right: 0;
@@ -138,29 +138,29 @@ body {
   -webkit-box-shadow: 0 0px 10px #000;
 }
 
-.termkitCommandView .context .path {
+commandView > context .path {
   float: left;
 }
 
-.termkitCommandView .context .path span {
+commandView > context .path span {
   padding-right: .5em;
 }
 
-.termkitCommandView .context .path span::before {
+commandView > context .path span::before {
   padding-right: .5em;
   content: '/';
   color: #99c;
 }
 
-.termkitCommandView .context .user {
+commandView > context .user {
   float: right;
 }
 
-.termkitCommand {
+command {
   position: relative;
 }
 
-.termkitCommand > span.sigil {
+command > sigil {
   position: absolute;
   left: 15px;
   top: 12px;
@@ -168,31 +168,31 @@ body {
   font-size: 12px;
 }
 
-.termkitCommand > span.sigil-ok {
+command > sigil.ok {
   color: #9f7;
   text-shadow: 0 0 5px rgba(0, 255, 0, 1), 0 0 10px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 255, 0, 1);
 }
 
-.termkitCommand > span.sigil-warning {
+command > sigil.warning {
   color: #ff9;
 }
 
-.termkitCommand > span.sigil-error {
+command > sigil.error {
   color: #f77;
   text-shadow: 0 0 5px rgba(255, 0 , 0, 1), 0 0 10px rgba(255, 0 , 0, 1), 0 0 20px rgba(255, 0 , 0, 1);
 }
 
-.termkitCommand .termkitSpinner {
+command .termkitSpinner {
   position: absolute;
   left: -2px;
   top: -1px;
 }
 
-.termkitCommand .termkitTokenField {
+command .termkitTokenField {
 /*  background: #000 -webkit-gradient(linear, left top, left bottom, from(#333), color-stop(0.1, #000));*/
 }
 
-.termkitCommand.command-open {
+command.command-open {
 /*  background: #000 -webkit-gradient(linear, left 80%, left bottom, from(#000), color-stop(0.7, #111), to(#222));*/
 }
 

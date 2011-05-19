@@ -7,7 +7,7 @@ var cv = termkit.commandView;
  */
 cv.command = function (commandView, context) {
   this.$element = this.$markup();
-  this.$sigil = this.$element.find('.sigil');
+  this.$sigil = this.$element.find('sigil');
 
   this.commandView = commandView;
   this.context = context;
@@ -24,7 +24,7 @@ cv.command.prototype = {
   // Return active markup for this command.
   $markup: function () {
     var that = this;
-    var $command = $('<div class="termkitCommand"><span class="sigil"></span>').data('controller', this);
+    var $command = $('<command><sigil></sigil>').data('controller', this);
 
     // Create tokenfield for command input.
     this.tokenField = new termkit.tokenField();
@@ -64,7 +64,6 @@ cv.command.prototype = {
   // Update the element.
   updateElement: function () {
     var classes = [
-      'termkitCommand',
       'command-'+ this.state,
       this.collapsed ? 'command-collapsed' : 'command-open'
     ];
@@ -75,7 +74,7 @@ cv.command.prototype = {
       'error': '✖',
       'warning': '⚠',
     }[this.state];
-    this.$sigil.attr('class', 'sigil sigil-'+this.state).html(this.collapsed ? '▶' : sigil);
+    this.$sigil.attr('class', '' + this.state).html(this.collapsed ? '▶' : sigil);
 
     this.spinner.$element[(this.state == 'running') ? 'show' : 'hide']();
 

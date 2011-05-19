@@ -11,8 +11,8 @@ var cv = termkit.commandView = function (shell) {
   this.$element = this.$markup();
 
   // Find structural markup.
-  this.$commands = this.$element.find('.commands');
-  this.$context = this.$element.find('.context');
+  this.$commands = this.$element.find('commands');
+  this.$context = this.$element.find('context');
   
   this.activeIndex = 0;
   this.beginIndex = 0;
@@ -27,7 +27,7 @@ cv.prototype = {
   
   // Return active markup for this widget.
   $markup: function () {
-    var $commandView = $('<div class="termkitCommandView"><div class="commands"></div><div class="context"></div>').data('controller', this);
+    var $commandView = $('<commandView><commands></commands><context></context></commandView>').data('controller', this);
     var that = this;
     return $commandView;
   },
@@ -53,7 +53,7 @@ cv.prototype = {
   resize: function () {
     // Measure view.
     var height = $('body').height() - this.$context[0].offsetHeight - (22 + 13) * 2 - 5;
-    $('#dynamic-styles').html('.termkitCommandView .termkitLimitHeight { max-height: ' + height + 'px; }');
+    $('#dynamic-styles').html('commandView .termkitLimitHeight { max-height: ' + height + 'px; }');
   },
   
   activeCommand: function () {
